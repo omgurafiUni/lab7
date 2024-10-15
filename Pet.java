@@ -6,7 +6,7 @@ import java.util.Calendar;
  * Läs P7_3
  * 
  * @author 24adsa02 (Adam Sandén)
- * @version 20241014
+ * @version 20241015
  */
 public class Pet {
 	// Hämtar vilket år det är med hjälp av Calendar

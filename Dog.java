@@ -1,28 +1,30 @@
-package lab7;
+package lab7.animals.pet;
+
+import lab7.animals.Animal;
 
 /**
  * Läs P7_4
  * 
  * @author 24adsa02 (Adam Sandén)
- * @version 20241014
+ * @version 20241015
  */
-public class Dog extends Pet {
+public class Dog extends Animal {
 	private boolean hunting;
 
 	// Konstruktor
-	Dog(String name) {
+	public Dog(String name) {
 		super(name);
 		this.hunting = false;
 	}
 
 	// Andra konstruktor
-	Dog(String name, int birthYear) {
+	public Dog(String name, int birthYear) {
 		super(name, birthYear);
 		this.hunting = false;
 	}
 
 	// Tredje konstruktor
-	Dog(String name, int birthYear, boolean hunting) {
+	public Dog(String name, int birthYear, boolean hunting) {
 		super(name, birthYear);
 		this.hunting = hunting;
 	}

@@ -1,28 +1,30 @@
-package lab7;
+package lab7.animals.pet;
+
+import lab7.animals.Animal;
 
 /**
  * Läs P7_4
  * 
  * @author 24adsa02 (Adam Sandén)
- * @version 20241014
+ * @version 20241015
  */
-public class Cat extends Pet {
+public class Cat extends Animal {
 	private boolean indoor;
 
 	// Konstruktor
-	Cat(String name) {
+	public Cat(String name) {
 		super(name);
 		this.indoor = false;
 	}
 
 	// Andra konstruktor
-	Cat(String name, int birthYear) {
+	public Cat(String name, int birthYear) {
 		super(name, birthYear);
 		this.indoor = false;
 	}
 
 	// Tredje konstruktor
-	Cat(String name, int birthYear, boolean indoor) {
+	public Cat(String name, int birthYear, boolean indoor) {
 		super(name, birthYear);
 		this.indoor = indoor;
 	}
@@ -34,8 +36,8 @@ public class Cat extends Pet {
 	public String getDescription() {
 		return "Katt, " + getName() + ", " + getAge() + " år, " + indoor;
 	}
-	
+
 	public boolean isIndoor() {
-        return indoor;
-    }
+		return indoor;
+	}
 }
