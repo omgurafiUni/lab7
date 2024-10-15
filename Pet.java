@@ -18,7 +18,7 @@ public class Pet {
 	// Första konstruktorn
 	public Pet(String name) {
 		// Anropa den andra konstruktorn med året vi är på
-		this(name, Calendar.getInstance().get(Calendar.YEAR)); // Skickar vidare name och året vi är på
+		this(name, Calendar.getInstance().get(Calendar.YEAR)); // Tar datan från andra konstruktorn med "this"
 	}
 
 	// Andra konstruktorn
