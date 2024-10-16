@@ -11,7 +11,7 @@ public class TallyCounter {
 
 	// Tom konstruktor
 	public TallyCounter() {
-
+		
 	}
 
 	// Ökar värdet med ett för varje count
