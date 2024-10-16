@@ -32,8 +32,8 @@ public class Question {
      * @param correctResponse the answer
      */
     public void setAnswer(String correctResponse) {
-        // Remove hyphens and normalize spaces
-        answer = correctResponse.trim().replaceAll("-", "").replaceAll("\\s+", " ");
+        // Only normalize spaces, don't remove hyphens!
+        answer = correctResponse.trim().replaceAll("\\s+", " ");
     }
 
     /**
@@ -52,8 +52,8 @@ public class Question {
      * @return true if the response was correct, false otherwise
      */
     public boolean checkAnswer(String response) {
-        // Normalize response by removing hyphens, trimming, and handling spaces
-        String normalizedResponse = response.trim().replaceAll("-", "").replaceAll("\\s+", " ");
+        // Normalize response by trimming and handling spaces, but don't touch hyphens
+        String normalizedResponse = response.trim().replaceAll("\\s+", " ");
         return normalizedResponse.toLowerCase().equals(answer.toLowerCase());
     }
 
