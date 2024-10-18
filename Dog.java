@@ -8,7 +8,7 @@ import lab7.animals.Animal;
  * @author 24adsa02 (Adam Sandén)
  * @version 20241015
  */
-public class Dog extends Animal {
+public class Dog extends Animal { // Dog ärver från Animal
 	private boolean hunting;
 
 	// Konstruktor

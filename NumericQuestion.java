@@ -8,32 +8,25 @@ package lab7;
  * @version 20241016
  */
 public class NumericQuestion extends Question {
-    public NumericQuestion() {
-        super();
-    }
+	public NumericQuestion() {
+		super();
+	}
 
-    @Override
-    public void setAnswer(String correctResponse) {
-        // In NumericQuestion, we don't remove hyphens since negative numbers are valid
-        super.setAnswer(correctResponse.trim());  // Just trim spaces but don't touch hyphens
-    }
+	@Override
+	public void setAnswer(String correctResponse) {
+		// I NumericQuestion tar vi inte bort bindrestrecken eftersom negativa nummer är
+		// valid
+		super.setAnswer(correctResponse.trim());
+	}
 
-    @Override
-    public boolean checkAnswer(String response) {
-        try {
-            // Get the correct answer and user response as double
-            double correctAnswer = Double.parseDouble(getAnswer().replaceAll(",", ".").trim());
-            double userResponse = Double.parseDouble(response.replaceAll(",", ".").trim());
-            
-            correctAnswer = Math.round(correctAnswer * 100.0) / 100.0;
-            userResponse = Math.round(userResponse * 100.0) / 100.0;
+	@Override
+	public boolean checkAnswer(String response) {
+		// Hämta correctAnswer OCH userResponse, byt ut alla komma till punkt och ta
+		// bort whitespaces
+		double correctAnswer = Double.parseDouble(getAnswer().replaceAll(",", ".").trim());
+		double userResponse = Double.parseDouble(response.replaceAll(",", ".").trim());
 
-            // Check if the difference between the two numbers is within 0.01
-            return Math.abs(correctAnswer - userResponse) < 0.01;
-        } catch (NumberFormatException e) {
-            // If conversion fails, log and return false
-            System.out.println("NumberFormatException: " + e.getMessage());
-            return false;
-        }
-    }
+		// Om skillnaden är mindre än 0.01 med floating-point precision, returneras true
+		return Math.abs(correctAnswer - userResponse) < 0.010000000000001;
+	}
 }
